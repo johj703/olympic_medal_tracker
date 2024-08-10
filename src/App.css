@@ -1,3 +1,7 @@
+html {
+  display: block;
+}
+
 #root {
   justify-content: center;
 }

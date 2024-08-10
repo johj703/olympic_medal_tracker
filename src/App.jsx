@@ -11,15 +11,15 @@ function App() {
         </div>
         <div className="input-field">
           <label>금메달</label>
-          <input type="text" placeholder="국가 입력" />
+          <input type="number" placeholder="국가 입력" />
         </div>
         <div className="input-field">
           <label>은메달</label>
-          <input type="text" placeholder="국가 입력" />
+          <input type="number" placeholder="국가 입력" />
         </div>
         <div className="input-field">
           <label>동메달</label>
-          <input type="text" placeholder="국가 입력" />
+          <input type="number" placeholder="국가 입력" />
         </div>
         <div className="button-group">
           <button type="submit">국가 추가</button>

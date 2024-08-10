@@ -29,6 +29,26 @@ function App() {
       <div>
         <p>아직 추가된 국가가 없습니다. 메달을 추적하세요!</p>
       </div>
+      <table>
+        <thead>
+          <tr>
+            <th>국가명</th>
+            <th>금메달</th>
+            <th>은메달</th>
+            <th>동메달</th>
+            <th>액션</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>대한민국</td>
+          <td>11</td>
+          <td>8</td>
+          <td>10</td>
+          <td>
+            <button>삭제</button>
+          </td>
+        </tbody>
+      </table>
     </div>
   )
 }

@@ -2,7 +2,14 @@ import './App.css'
 import { useState } from "react";
 
 function App() {
+  // 국가 데이터를 저장하는 상태, 폼 입력 데이터를 저장하는 상태 선언
   const [countries, setCountries] = useState([]);
+  const [formData, setFormData] = useState({
+    country: '',
+    gold: '',
+    silver: '',
+    bronze: '',
+  });
 
   return (
     <div className="container">

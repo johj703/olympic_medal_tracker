@@ -11,6 +11,7 @@ function App() {
     bronze: '',
   });
 
+  // 사용자가 입력 폼의 값을 변경할 때마다 호출되는 함수
   const handleChange = (e) => {
     setFormData({
       ...formData,

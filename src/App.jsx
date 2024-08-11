@@ -19,6 +19,26 @@ function App() {
     });
   };
 
+  // 국가 추가 버튼 클릭 시 호출되는 함수
+  const handleAddCountry = () => {
+    // 새로운 국가 데이터를 추가
+    setCountries([...countries, formData]);
+
+    // 국가 데이터를 금메달 수 기준으로 내림차순 정렬
+    setCountries((prevCountries) => 
+      [...prevCountries].sort((a, b) => b.gold - a.gold)
+    );
+
+    // 폼 필드를 초기 상태로 리셋
+    setFormData({
+      country: '',
+      gold: '',
+      silver: '',
+      bronze: '',
+    })
+  };
+
+
   return (
     <div className="container">
       <h1>2024 파리 올림픽</h1>
@@ -68,7 +88,10 @@ function App() {
           />
         </div>
         <div className="button-group">
-          <button type="submit">국가 추가</button>
+          <button
+           type="button"
+           onClick={handleAddCountry}
+          >국가 추가</button>
           <button type="button">업데이트</button>
         </div>
       </form>

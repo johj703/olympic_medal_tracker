@@ -11,25 +11,60 @@ function App() {
     bronze: '',
   });
 
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  }
+
   return (
     <div className="container">
       <h1>2024 파리 올림픽</h1>
       <form className="input-group">
         <div className="input-field">
           <label>국가명</label>
-          <input type="text" placeholder="국가 입력" />
+          <input
+            type="text"
+            name="country" 
+            placeholder="국가 입력" 
+            value={formData.country}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="input-field">
           <label>금메달</label>
-          <input type="number" placeholder="국가 입력" />
+          <input
+            type="number"
+            name="gold" 
+            placeholder="금메달 수" 
+            value={formData.gold}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="input-field">
           <label>은메달</label>
-          <input type="number" placeholder="국가 입력" />
+          <input
+            type="number"
+            name="silver" 
+            placeholder="은매달 수" 
+            value={formData.silver}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="input-field">
           <label>동메달</label>
-          <input type="number" placeholder="국가 입력" />
+          <input
+            type="number"
+            name="bronze" 
+            placeholder="동메달 수" 
+            value={formData.bronze}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="button-group">
           <button type="submit">국가 추가</button>

@@ -26,10 +26,8 @@ h1 {
 
 .input-group {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  gap: 8px;
-  align-items: flex-end;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .input-field {

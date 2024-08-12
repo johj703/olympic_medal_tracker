@@ -10,8 +10,7 @@ function App() {
     silver: "",
     bronze: "",
   });
-
-  // 현재 편집중인 항목의 인덱스를 저장하는 상태
+  // 편집 중인 국가의 Index를 저장하는 상태 선언
   const [editIndex, setEditIndex] = useState(null);
 
   // 사용자가 입력 폼의 값을 변경할 때마다 호출되는 함수
@@ -44,17 +43,12 @@ function App() {
   // 업데이트 버튼 클릭 시 호출되는 함수
   const handleUpdateCountry = () => {
     if (editIndex !== null) {
-      // 이미 있는 데이터를 업데이트 합니다.
+      // 편집 중인 국가 데이터를 업데이트
       const updatedCountries = [...countries];
       updatedCountries[editIndex] = formData;
-      setCountries(updatedCountries);
 
-      // 국가 데이터를 금메달 수 기준으로 내림차순 정렬
-      setCountries((prevCountries) =>
-        [...prevCountries].sort((a, b) => b.gold - a.gold)
-      );
-      // 편집 모드 종료
-      setEditIndex(null);
+      // 업데이트 된 국가 데이터를 금메달 수 기준으로 내림차순 정렬
+      setCountries(updatedCountries.sort((a, b) => b.gold - a.gold));
 
       // 입력 폼을 초기 상태로 리셋
       setFormData({
@@ -63,10 +57,13 @@ function App() {
         silver: "",
         bronze: "",
       });
+
+      // 편집 중인 인덱스를 초기화해서 추가 모드로 돌아가도록 작성
+      setEditIndex(null);
     }
   };
 
-  // 삭제 버튼이 클릭되었을 때 호출되는 함수입니다.
+  // 삭제 버튼이 클릭되었을 때 호출되는 함수
   const handleDelete = (index) => {
     const newCountries = [...countries];
     newCountries.splice(index, 1);
@@ -76,7 +73,7 @@ function App() {
   return (
     <div className="container">
       <h1>2024 파리 올림픽</h1>
-      <form className="input-group">
+      <form className="input-group" onSubmit={(e) => e.preventDefault()}>
         <div className="input-field">
           <label>국가명</label>
           <input
@@ -104,7 +101,7 @@ function App() {
           <input
             type="number"
             name="silver"
-            placeholder="은매달 수"
+            placeholder="은메달 수"
             value={formData.silver}
             onChange={handleChange}
             required
@@ -121,6 +118,7 @@ function App() {
             required
           />
         </div>
+        {/* 버튼들을 입력 필드 오른쪽에 위치 */}
         <div className="button-group">
           <button type="button" onClick={handleAddCountry}>
             국가 추가
@@ -146,7 +144,7 @@ function App() {
             </thead>
             <tbody>
               {/* 국가 데이터를 금메달 수 기준으로 내림차순으로 표시 */}
-              {countries.map((country, index) => {
+              {countries.map((country, index) => (
                 <tr key={index}>
                   <td>{country.country}</td>
                   <td>{country.gold}</td>
@@ -155,8 +153,8 @@ function App() {
                   <td>
                     <button onClick={() => handleDelete(index)}>삭제</button>
                   </td>
-                </tr>;
-              })}
+                </tr>
+              ))}
             </tbody>
           </table>
         )}

@@ -138,13 +138,18 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              <td>대한민국</td>
-              <td>11</td>
-              <td>8</td>
-              <td>10</td>
-              <td>
-                <button>삭제</button>
-              </td>
+              {/* 국가 데이터를 금메달 수 기준으로 내림차순으로 표시 */}
+              {countries.map((country, index) => {
+                <tr key={index}>
+                  <td>{country.country}</td>
+                  <td>{country.gold}</td>
+                  <td>{country.silver}</td>
+                  <td>{country.bronze}</td>
+                  <td>
+                    <button>삭제</button>
+                  </td>
+                </tr>;
+              })}
             </tbody>
           </table>
         )}

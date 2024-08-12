@@ -60,25 +60,24 @@ table {
 tr {
   display: table-row;
   vertical-align: inherit;
-
   border-color: inherit;
 }
 
 thead {
   display: table-header-group;
   vertical-align: middle;
-
   border-color: inherit;
+  background-color: #000080;
+  color: white;
 }
 
 tbody {
   display: table-row-group;
   vertical-align: middle;
-
   border-color: inherit;
 }
 
 td {
-  justify-content: center;
+  text-align: center;
   align-items: center;
 }

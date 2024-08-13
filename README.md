@@ -2,6 +2,10 @@
 
 olympic-medal-tracker.vercel.app/
 
+## 작업 기간
+
+24.08.08(목요일)~24.08.13(화요일)
+
 ## 프로젝트 구조
 
 ```md

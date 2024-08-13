@@ -48,7 +48,7 @@ button {
   align-self: center;
 }
 
-.btnAddCountry .btnUpdateCountry {
+.button-group > button {
   background-color: #fc0;
 }
 

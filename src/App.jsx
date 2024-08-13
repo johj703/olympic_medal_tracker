@@ -72,9 +72,7 @@ function App() {
 
   // 삭제 버튼이 클릭되었을 때 호출되는 함수
   const handleDelete = (index) => {
-    const newCountries = [...countries];
-    newCountries.splice(index, 1);
-    setCountries(newCountries);
+    setCountries(countries.filter((_, i) => i !== index));
   };
 
   return (

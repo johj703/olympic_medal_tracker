@@ -48,6 +48,15 @@ button {
   align-self: center;
 }
 
+.btnAddCountry .btnUpdateCountry {
+  background-color: #fc0;
+}
+
+.deleteButton {
+  background-color: red;
+  color: white;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

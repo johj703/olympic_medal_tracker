@@ -31,7 +31,7 @@ function App() {
       [...prevCountries].sort((a, b) => b.gold - a.gold)
     );
 
-    // 폼 필드를 초기 상태로 리셋
+    // 입력 폼을 초기 상태로 리셋
     setFormData({
       country: "",
       gold: "",
@@ -42,10 +42,20 @@ function App() {
 
   // 업데이트 버튼 클릭 시 호출되는 함수
   const handleUpdateCountry = () => {
-    if (editIndex !== null) {
-      // 편집 중인 국가 데이터를 업데이트
+    // 입력한 국가가 테이블에 존재하는지 확인
+    const index = countries.findIndex(
+      (country) => country.country === formData.country
+    );
+
+    // 존재하는 경우, 해당 국가의 메달 수를 업데이트
+    if (index !== -1) {
       const updatedCountries = [...countries];
-      updatedCountries[editIndex] = formData;
+      updatedCountries[index] = {
+        ...updatedCountries[index],
+        gold: formData.gold,
+        silver: formData.silver,
+        bronze: formData.bronze,
+      };
 
       // 업데이트 된 국가 데이터를 금메달 수 기준으로 내림차순 정렬
       setCountries(updatedCountries.sort((a, b) => b.gold - a.gold));
@@ -57,9 +67,8 @@ function App() {
         silver: "",
         bronze: "",
       });
-
-      // 편집 중인 인덱스를 초기화해서 추가 모드로 돌아가도록 작성
-      setEditIndex(null);
+    } else {
+      alert("해당 국가가 목록에 없습니다. 먼저 추가해 주세요!");
     }
   };
 

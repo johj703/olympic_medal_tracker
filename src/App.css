@@ -1,12 +1,13 @@
 .container {
   max-width: 1200px; /* 필수 요구 사항 - 최대 넓이 1200px */
   min-width: 800px; /* 필수 요구 사항 - 최소 넓이 800px */
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 4px 8px #0000001a;
   border-radius: 8px;
   color: #333;
+  align-item: center;
 }
 
 h1 {

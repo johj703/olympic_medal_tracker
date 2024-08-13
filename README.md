@@ -1,3 +1,7 @@
+## 배포 주소
+
+olympic-medal-tracker.vercel.app/
+
 ## 프로젝트 구조
 
 ```md

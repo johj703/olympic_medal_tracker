@@ -10,8 +10,6 @@ function App() {
     silver: "",
     bronze: "",
   });
-  // 편집 중인 국가의 Index를 저장하는 상태 선언
-  const [editIndex, setEditIndex] = useState(null);
 
   // 사용자가 입력 폼의 값을 변경할 때마다 호출되는 함수
   const handleChange = (e) => {

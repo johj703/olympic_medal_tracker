@@ -151,7 +151,12 @@ function App() {
                   <td>{country.silver}</td>
                   <td>{country.bronze}</td>
                   <td>
-                    <button onClick={() => handleDelete(index)}>삭제</button>
+                    <button
+                      className="deleteButton"
+                      onClick={() => handleDelete(index)}
+                    >
+                      삭제
+                    </button>
                   </td>
                 </tr>
               ))}

@@ -1,14 +1,14 @@
-import "./App.css";
-import { useState } from "react";
+import './App.css';
+import { useState } from 'react';
 
 function App() {
   // 국가 데이터를 저장하는 상태, 폼 입력 데이터를 저장하는 상태 선언
   const [countries, setCountries] = useState([]);
   const [formData, setFormData] = useState({
-    country: "",
-    gold: "",
-    silver: "",
-    bronze: "",
+    country: '',
+    gold: '',
+    silver: '',
+    bronze: '',
   });
 
   // 사용자가 입력 폼의 값을 변경할 때마다 호출되는 함수
@@ -26,15 +26,15 @@ function App() {
 
     // 국가 데이터를 금메달 수 기준으로 내림차순 정렬
     setCountries((prevCountries) =>
-      [...prevCountries].sort((a, b) => b.gold - a.gold)
+      [...prevCountries].sort((a, b) => b.gold - a.gold),
     );
 
     // 입력 폼을 초기 상태로 리셋
     setFormData({
-      country: "",
-      gold: "",
-      silver: "",
-      bronze: "",
+      country: '',
+      gold: '',
+      silver: '',
+      bronze: '',
     });
   };
 
@@ -42,7 +42,7 @@ function App() {
   const handleUpdateCountry = () => {
     // 입력한 국가가 테이블에 존재하는지 확인
     const index = countries.findIndex(
-      (country) => country.country === formData.country
+      (country) => country.country === formData.country,
     );
 
     // 존재하는 경우, 해당 국가의 메달 수를 업데이트
@@ -60,13 +60,13 @@ function App() {
 
       // 입력 폼을 초기 상태로 리셋
       setFormData({
-        country: "",
-        gold: "",
-        silver: "",
-        bronze: "",
+        country: '',
+        gold: '',
+        silver: '',
+        bronze: '',
       });
     } else {
-      alert("해당 국가가 목록에 없습니다. 먼저 추가해 주세요!");
+      alert('해당 국가가 목록에 없습니다. 먼저 추가해 주세요!');
     }
   };
 

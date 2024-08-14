@@ -1,6 +1,6 @@
 ## 배포 주소
 
-[olympic-medal-tracker.vercel.app/](olympic-medal-tracker.vercel.app/)
+[olympic-medal-tracker.vercel.app/](https://olympic-medal-tracker.vercel.app/)
 
 ## 작업 기간
 
